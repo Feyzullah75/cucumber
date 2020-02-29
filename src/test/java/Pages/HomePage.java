@@ -12,6 +12,8 @@ public class HomePage {
 
     public HomePage() {
 
+        // comment
+
         PageFactory.initElements(Driver.getDriver(), this);
 
     }
