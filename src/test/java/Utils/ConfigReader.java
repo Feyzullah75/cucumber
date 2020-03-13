@@ -11,6 +11,7 @@ public class ConfigReader {
         try {
             FileInputStream input = new FileInputStream(path);
             configFile=new Properties();
+
             configFile.load(input);
             input.close();
         }catch(Exception e){
