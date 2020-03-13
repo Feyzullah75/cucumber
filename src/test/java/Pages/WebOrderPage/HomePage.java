@@ -1,4 +1,4 @@
-package Pages;
+package Pages.WebOrderPage;
 
 import Utils.Driver;
 import org.openqa.selenium.WebElement;
@@ -18,19 +18,26 @@ public class HomePage {
 
     }
 
-    @FindBy(xpath = "//ul[@id='ctl100_menu']//li")
+    @FindBy(xpath = "//ul[@id='ctl00_menu']//li")
     public List<WebElement> orderMenu;
 
     @FindBy(xpath = "//a[.='View all products']")
     public WebElement viewAllProductsButton;
 
-    public List<String> orderMenuData() {
-        List<String> menus = new ArrayList<>();
+    @FindBy(xpath = "//a[.='View all orders']")
+    public WebElement viewAllOrdersButton;
+
+    // this is just for example. Normally it should come from API response or Database
+    public List<String> orderMenuData(){
+        List<String> menus=new ArrayList<>();
         menus.add("View all orders");
-        menus.add("View all product");
+        menus.add("View all products");
         menus.add("Order");
-
         return menus;
-
     }
+
+
+
+
+
 }

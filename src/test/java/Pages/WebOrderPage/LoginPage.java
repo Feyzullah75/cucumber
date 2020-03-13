@@ -1,4 +1,4 @@
-package Pages;
+package Pages.WebOrderPage;
 
 import Utils.Driver;
 import org.openqa.selenium.WebDriver;
@@ -15,9 +15,14 @@ public class LoginPage {
 
     @FindBy(id = "ctl00_MainContent_username")
     public WebElement username;
+
     @FindBy(id = "ctl00_MainContent_password")
     public WebElement password;
+
     @FindBy(id = "ctl00_MainContent_login_button")
     public WebElement loginBtn;
+
+    @FindBy(id = "ctl00_MainContent_status")
+    public WebElement errorMessage;
 
 }

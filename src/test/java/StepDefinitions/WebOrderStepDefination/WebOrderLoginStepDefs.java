@@ -1,10 +1,8 @@
-package StepDefinitions;
+package StepDefinitions.WebOrderStepDefination;
 
-import Pages.LoginPage;
+import Pages.WebOrderPage.LoginPage;
 import Utils.ConfigReader;
 import Utils.Driver;
-import com.google.gson.JsonObject;
-import io.cucumber.core.gherkin.Step;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -60,6 +58,58 @@ public class WebOrderLoginStepDefs<implement, You> {
         Assert.assertEquals(actualTitle,expectedTitle);
 
 
+    }
+
+    @When("the user provide username {string}")
+    public void the_user_provide_username(String username) {
+
+        page.username.sendKeys(username);
 
     }
+
+
+
+    @When("the user provide password {string}")
+    public void the_user_provide_password(String password) {
+
+        page.password.sendKeys(password);
+        page.loginBtn.click();
+
+    }
+
+
+    @Then("the user validate text {string}")
+    public void the_user_validate_text(String expectedMessage) {
+
+        String actualMessage=page.errorMessage.getText();
+        Assert.assertEquals(actualMessage,expectedMessage);
+
+    }
+
+    @When("the user provide username {int}")
+    public void the_user_provide_username(Integer username) {
+
+        page.username.sendKeys(""+username);
+
+    }
+
+    @When("the user provide password {int}")
+    public void the_user_provide_password(Integer password){
+
+        page.password.sendKeys(password.toString());
+        page.loginBtn.click();
+
+    }
+
+    @When("the user provide username {string} and password {string}")
+    public void the_user_provide_username_and_password(String string, String string2) {
+
+        page.username.sendKeys(string);
+        page.password.sendKeys(string2);
+        page.loginBtn.click();
+
+    }
+
+
+
 }
